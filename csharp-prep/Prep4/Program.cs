@@ -43,6 +43,30 @@ class Program
         }
         Console.WriteLine($"The max is: {max}");
 
-        int smallest
+        int smallest_positive = int.MaxValue;
+        bool found_positive = false;
+        foreach (int number in numbers)
+        {
+            if (number > 0 && number <smallest_positive)
+            {
+                smallest_positive = number;
+                found_positive = true
+            }
+        }
+
+        if (found_positive)
+        {
+            Console.WriteLine($"The smallest positive number is: {smallest_positive}");
+        }
+        else
+        {
+            Console.WriteLine("There are no positive numbers in the list.");
+        }
+        numbers.Sort();
+        Console.WriteLine("The sorted list is:");
+        foreach (int number in numbers)
+        {
+            Console.WriteLine(number)
+        }
     }
 }
