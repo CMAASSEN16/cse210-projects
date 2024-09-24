@@ -50,7 +50,7 @@ class Program
             if (number > 0 && number <smallest_positive)
             {
                 smallest_positive = number;
-                found_positive = true
+                found_positive = true;
             }
         }
 
@@ -66,7 +66,7 @@ class Program
         Console.WriteLine("The sorted list is:");
         foreach (int number in numbers)
         {
-            Console.WriteLine(number)
+            Console.WriteLine(number);
         }
     }
 }
