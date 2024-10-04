@@ -1,0 +1,1 @@
+// Code will iterate through scripture list pulling scripture? 
