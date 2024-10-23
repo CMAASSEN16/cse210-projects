@@ -19,7 +19,7 @@ public class ListingActivity : Activity
         Random random = new Random();
         string prompt = prompts[random.Next(prompts.Count)];
         Console.WriteLine(prompt);
-        ShowSpinner(3);
+        ShowSpinner();
 
         int _count = 0;
         int _elapsed = 0;

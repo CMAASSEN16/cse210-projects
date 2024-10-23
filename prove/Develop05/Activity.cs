@@ -20,26 +20,51 @@ public abstract class Activity
 
     public void ShowStartMessage()
     {
-        Console.WriteLine($"Starting {_name}");
+        Console.WriteLine($"Starting {_name}\n");
         Console.WriteLine(_description);
         SetDuration();
-        Console.WriteLine("Prepare to start . . .");
-        ShowSpinner(3);
+        Console.WriteLine("\nPrepare to start . . .");
+        ShowSpinner();
     }
 
     public void ShowEndMessage()
     {
-        Console.WriteLine("Fantastic!");
+        Console.WriteLine("\nFantastic!");
         Console.WriteLine($"You completed the {_name} activity with the selected time of {_duration} seconds");
-        ShowSpinner(3);
+        ShowSpinner();
     }
 
-    protected void ShowSpinner(int seconds)
+
+
+    protected void ShowSpinner()
     {
-        for (int i = 0; i < seconds; i++)
+        List<string> animationStrings = new List<string>();
+        animationStrings.Add("|");
+        animationStrings.Add("/");
+        animationStrings.Add("-");
+        animationStrings.Add("\\");
+        animationStrings.Add("|");
+        animationStrings.Add("/");
+        animationStrings.Add("-");
+        animationStrings.Add("\\");
+
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(5);
+
+        int i = 0;
+
+        while (DateTime.Now < endTime)
         {
-            Console.WriteLine(". ");
-            System.Threading.Thread.Sleep(2000);
+            string s = animationStrings[i];
+            Console.Write(s);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+
+            i++;
+            if (i >= animationStrings.Count)
+            {
+                i = 0;
+            }
         }
 
         Console.WriteLine();

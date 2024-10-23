@@ -31,16 +31,29 @@ public class ReflectionActivity : Activity
         Random random = new Random();
         string prompt = prompts[random.Next(prompts.Count)];
         Console.WriteLine(prompt);
-        ShowSpinner(3);
+        ShowSpinner();
         
+        List<string> scrambledQuestions = new List<string>(questions);
+        int questionCount = 0;
+
         int _elapsed = 0;
         while (_elapsed < _duration)
         {
-            string question = questions[random.Next(questions.Count)];
-            Console.WriteLine(question);
-            ShowSpinner(5);
+            if (scrambledQuestions.Count == 0)
+            {
+                scrambledQuestions = new List<string>(questions);
+            }
+            int questionIndex = random.Next(scrambledQuestions.Count);
+            string question = scrambledQuestions[questionIndex];
+            Console.WriteLine(question + "\nYour Response");
+            string response = Console.ReadLine();
+
+            questionCount++;
             _elapsed += 5;
         }
+
+        Console.WriteLine($"You answered {questionCount} questions");
+        
         ShowEndMessage();
     }
 }
