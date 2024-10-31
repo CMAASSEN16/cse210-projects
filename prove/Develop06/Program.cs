@@ -1,6 +1,6 @@
 using System;
 
-// I have created a save/ load option to the program
+// I have created an option for bonus points on the checklist program. 
 
 class Program
 {
