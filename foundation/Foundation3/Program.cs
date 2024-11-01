@@ -1,31 +1,3 @@
-// using System;
-// using System.Collections.Generic;
-
-// class Program
-// {
-//     static void Main(string[] args)
-//     {
-//         List<Activity> activities = new List<Activity>
-//         {
-//             new Swimming("05 Aug 2024", 30, 10),
-//             new Running("10 Aug 2024", 30, 2.5),
-//             new Cycling("21 Oct 2024", 30, 17.9)
-//         };
-
-//         foreach (var activity in activities)
-//         {
-//             if (activity != null)
-//             {
-//             Console.WriteLine(activity.GetSummary());
-//             }
-//             else
-//             {
-//                 Console.WriteLine("Encountered null activity");
-//             }
-//         }
-//     }
-// }
-
 using System;
 using System.Collections.Generic; // Ensure this import is here
 
